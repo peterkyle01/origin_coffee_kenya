@@ -22,8 +22,8 @@ export default function Footer() {
         <div className="w-full h-auto sm:h-80 grid py-8">
           <p className="py-2 font-thin">Phone:0795100000</p>
           <p className="py-2 font-thin">Email:info@origincoffee.co.ke</p>
-          <p className="py-2 font-thin">Wed-Sat:from 9:00 am</p>
-          <p className="py-2 font-thin">Sun:from 12 am to 3 pm</p>
+          <p className="py-2 font-thin">Mon-Sat:from 9:00 am</p>
+          <p className="py-2 font-thin">Sun:from 12 pm to 4 pm</p>
         </div>
         <div className="w-full h-auto sm:h-80 py-8">
           <p className="py-2 font-semibold">LATEST JOBS</p>
