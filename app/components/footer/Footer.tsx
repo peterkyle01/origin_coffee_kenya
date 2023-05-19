@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FaFacebookSquare,
   FaInstagramSquare,
@@ -25,8 +26,14 @@ export default function Footer() {
           <p className="py-2 font-thin">Sun:from 12 am to 3 pm</p>
         </div>
         <div className="w-full h-auto sm:h-80 py-8">
-          <p className="py-2 font-semibold">LATEST NEWS</p>
-          <p className="py-2 font-thin">Restaurant of the Year 2022</p>
+          <p className="py-2 font-semibold">LATEST JOBS</p>
+          <p className="py-2 font-thin">
+            Looking for a great,fun workplace?Join the Origin Coffee Kenya by
+            sharing your resume of the position interested to:
+            <Link href={"mailto:cv@origincoffee.co.ke"} className="text-orange-300">
+              cv@origincoffee.co.ke
+            </Link>
+          </p>
         </div>
       </div>
       <div className="w-full h-24">

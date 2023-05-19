@@ -10,7 +10,7 @@ const links = [
   { name: "Home", url: "/", icon: <></> },
   { name: "Menu", url: "/menu", icon: <></> },
   { name: "Our Story", url: "/our_story", icon: <></> },
-  { name: "Contact Us", url: "/contact_us", icon: <></> },
+  { name: "Location", url: "/location", icon: <></> },
 ];
 
 const Navbar = () => {
