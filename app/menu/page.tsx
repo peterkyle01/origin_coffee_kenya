@@ -1,11 +1,24 @@
 import Image from "next/image";
-
 import imageTen from "../../public/img_ten.jpg";
-export default function page() {
+import MenuCard from "../components/others/MenuCard";
+import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import { AppRouter } from "@/server";
+
+const trpc = createTRPCProxyClient<AppRouter>({
+  links: [
+    httpBatchLink({
+      url: process.env.API_ENDPOINT as string,
+    }),
+  ],
+});
+
+
+export default async function Menu() {
+  const foods = await trpc.meal.query()
   return (
     <>
-      <header className="w-screen h-80 relative flex justify-center items-center">
-        <div className="bg-black/40 w-full h-full absolute z-10"></div>
+      <header className="relative flex h-80 w-screen items-center justify-center">
+        <div className="absolute z-10 h-full w-full bg-black/40"></div>
         <Image
           src={imageTen}
           fill
@@ -15,7 +28,9 @@ export default function page() {
         />
         <h2 className="z-20">MENU</h2>
       </header>
-      <main className="w-screen h-100 bg-black/95"></main>
+      <main className="h-auto w-screen bg-black/95">
+        <MenuCard data={foods}/>
+      </main>
     </>
   );
 }

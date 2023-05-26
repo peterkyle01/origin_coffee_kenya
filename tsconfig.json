@@ -30,7 +30,7 @@
     ".next/types/**/*.ts",
     "app/components/config/Firebase.config.js",
     "app/components/drop_downs/DropDown.jsx",
-    "app/api/route.ts"
-  ],
+    "app/api/trpc/[trpc]/route.ts"
+, "app/components/others/MenuCard.tsx"  ],
   "exclude": ["node_modules"]
 }
