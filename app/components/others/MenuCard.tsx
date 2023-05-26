@@ -81,7 +81,7 @@ const MenuCard = ({data}:Food) => {
               {item.add_ons}
             </p>
             <hr className="w-3/4 place-self-center" />
-            <p className="font-bold text-orange-300">ksh{item.price}</p>
+            <p className="font-bold text-orange-300">Ksh{item.price}</p>
           </div>
         ))}
       </section>
