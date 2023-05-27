@@ -80,29 +80,32 @@
   }
 }
 
-
- 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-snap-type: y proximity;
+  scroll-padding-top:3rem;
 }
 
-h1{
-  @apply font-herr_von_muellerhoff text-orange-300 font-semibold text-6xl tracking-widest py-1 text-center
+h1 {
+  @apply py-1 text-center font-herr_von_muellerhoff text-6xl font-semibold tracking-widest text-orange-300;
 }
 
-h2{
-  @apply font-source_sans_pro text-white text-3xl py-1 text-center font-bold
+h2 {
+  @apply py-1 text-center font-source_sans_pro text-3xl font-bold text-white;
 }
 
-h3{
-  @apply text-white text-lg font-semibold py-1 text-center
+h3 {
+  @apply py-1 text-center text-lg font-semibold text-white;
 }
 
-p{
-  @apply text-white text-center sm:px-6
+p {
+  @apply text-center text-white sm:px-6;
 }
 
+.scroll_section {
+  scroll-snap-align: start;
+}

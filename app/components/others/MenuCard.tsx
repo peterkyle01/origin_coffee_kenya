@@ -1,7 +1,27 @@
 "use client";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
-import {useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  createTRPCProxyClient,
+  httpBatchLink,
+  TRPCClientError,
+} from "@trpc/client";
+import { AppRouter } from "@/server";
+
+export function isTRPCClientError(
+  cause: unknown
+): cause is TRPCClientError<AppRouter> {
+  return cause instanceof TRPCClientError;
+}
+
+const trpc = createTRPCProxyClient<AppRouter>({
+  links: [
+    httpBatchLink({
+      url: "http://localhost:3000/api/trpc",
+    }),
+  ],
+});
 const Links: { name: string }[] = [
   {
     name: "AllMeals",
@@ -23,37 +43,50 @@ const Links: { name: string }[] = [
   },
 ];
 
-type Food = {data:{
+type Food = {
+  data: {
     id: number;
     title: string;
     add_ons: string | null;
     price: number;
     category: string;
-}[]}
+  }[];
+};
 
-
-const MenuCard = ({data}:Food) => {
-
+const MenuCard = ({ data }: Food) => {
   const [divName, setDivName] = useState("AllMeals");
   const [meals, setMeals] = useState(data);
 
-  console.log(meals)
+  async function handleData(name: string) {
+    try {
+      const res = await trpc.meal.query();
+
+      const meals_ = res.filter((meal) => {
+        if (name == "AllMeals") {
+          return res;
+        } else {
+          return meal.category == name;
+        }
+      });
+      setMeals(meals_);
+    } catch (cause) {
+      if (isTRPCClientError(cause)) {
+        alert(cause.data);
+      }
+    }
+  }
 
   return (
     <>
-      <section className=" grid h-32 w-screen">
-        <div className="flex items-center overflow-x-scroll">
+      <section className="scroll_section grid h-32 w-screen">
+        <div className="flex items-center overflow-x-scroll md:justify-evenly md:overflow-x-hidden">
           {Links.map((link) => (
             <button
-             key={link.name}
+              key={link.name}
               className="mx-2 text-lg text-white"
               onClick={() => {
                 setDivName(link.name);
-                setMeals(()=>{
-                  return meals.filter(meal=>{
-                    meal.category=link.name
-                  })
-                })
+                handleData(link.name);
               }}
             >
               {link.name}
@@ -64,8 +97,8 @@ const MenuCard = ({data}:Food) => {
           {divName}
         </p>
       </section>
-      <section className="grid h-auto w-screen grid-cols-2 gap-1 p-1 sm:grid-cols-3 lg:grid-cols-4">
-        {data.map((item) => (
+      <section className="grid h-100 w-screen grid-cols-2 gap-1 overflow-y-scroll p-1 sm:grid-cols-3 lg:grid-cols-4">
+        {meals.map((item) => (
           <div className="grid h-72 w-full bg-black/50" key={item.id}>
             <div className="relative h-48 bg-white">
               <Image
