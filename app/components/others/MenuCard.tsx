@@ -1,7 +1,7 @@
 "use client";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   createTRPCProxyClient,
   httpBatchLink,
@@ -18,7 +18,7 @@ export function isTRPCClientError(
 const trpc = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: "https://origin-coffee-kenya.vercel.app/api/trpc",
+      url: "https://origin-coffee-kenya.vercel.app//api/trpc",
     }),
   ],
 });
@@ -54,6 +54,21 @@ type Food = {
 const MenuCard = () => {
   const [divName, setDivName] = useState("AllMeals");
   const [meals, setMeals] = useState<Food | null>(null);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const res = await trpc.meal.query();
+
+        setMeals(res);
+      } catch (cause) {
+        if (isTRPCClientError(cause)) {
+          alert(cause.data);
+        }
+      }
+    }
+    getData()
+  }, []);
 
   async function handleData(name: string) {
     try {
@@ -96,25 +111,26 @@ const MenuCard = () => {
         </p>
       </section>
       <section className="grid h-100 w-screen grid-cols-2 gap-1 overflow-y-scroll p-1 sm:grid-cols-3 lg:grid-cols-4">
-        {meals && meals.map((item) => (
-          <div className="grid h-72 w-full bg-black/50" key={item.id}>
-            <div className="relative h-48 bg-white">
-              <Image
-                src={Logo}
-                fill
-                priority
-                alt="Logo Image"
-                sizes="max-width:2500px,max-height:1800"
-              />
+        {meals &&
+          meals.map((item) => (
+            <div className="grid h-72 w-full bg-black/50" key={item.id}>
+              <div className="relative h-48 bg-white">
+                <Image
+                  src={Logo}
+                  fill
+                  priority
+                  alt="Logo Image"
+                  sizes="max-width:2500px,max-height:1800"
+                />
+              </div>
+              <p className="text-lg font-extrabold uppercase">{item.title}</p>
+              <p className="text-center text-sm uppercase text-gray-400">
+                {item.add_ons}
+              </p>
+              <hr className="w-3/4 place-self-center" />
+              <p className="font-bold text-orange-300">Ksh{item.price}</p>
             </div>
-            <p className="text-lg font-extrabold uppercase">{item.title}</p>
-            <p className="text-center text-sm uppercase text-gray-400">
-              {item.add_ons}
-            </p>
-            <hr className="w-3/4 place-self-center" />
-            <p className="font-bold text-orange-300">Ksh{item.price}</p>
-          </div>
-        ))}
+          ))}
       </section>
     </>
   );
