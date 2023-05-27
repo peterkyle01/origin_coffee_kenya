@@ -51,19 +51,9 @@ type Food = {
   category: string;
 }[];
 
-const initialData: Food = [
-  {
-    id: 1,
-    title: "",
-    add_ons: null,
-    price: 0,
-    category: "",
-  },
-];
-
 const MenuCard = () => {
   const [divName, setDivName] = useState("AllMeals");
-  const [meals, setMeals] = useState(initialData);
+  const [meals, setMeals] = useState<Food | null>(null);
 
   async function handleData(name: string) {
     try {
@@ -106,7 +96,7 @@ const MenuCard = () => {
         </p>
       </section>
       <section className="grid h-100 w-screen grid-cols-2 gap-1 overflow-y-scroll p-1 sm:grid-cols-3 lg:grid-cols-4">
-        {meals.map((item) => (
+        {meals && meals.map((item) => (
           <div className="grid h-72 w-full bg-black/50" key={item.id}>
             <div className="relative h-48 bg-white">
               <Image
