@@ -2,9 +2,11 @@ import Image from "next/image";
 import imageTen from "../../public/img_ten.jpg";
 import MenuCard from "../components/others/MenuCard";
 import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import superjson from "superjson";
 import { AppRouter } from "@/server";
 
 const trpc = createTRPCProxyClient<AppRouter>({
+  transformer:superjson,
   links: [
     httpBatchLink({
       url: process.env.API_ENDPOINT as string,

@@ -1,12 +1,13 @@
 "use client";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   createTRPCProxyClient,
   httpBatchLink,
   TRPCClientError,
 } from "@trpc/client";
+import superjson from "superjson";
 import { AppRouter } from "@/server";
 
 export function isTRPCClientError(
@@ -16,6 +17,7 @@ export function isTRPCClientError(
 }
 
 const trpc = createTRPCProxyClient<AppRouter>({
+  transformer:superjson,
   links: [
     httpBatchLink({
       url: "http://localhost:3000/api/trpc",
