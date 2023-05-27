@@ -7,7 +7,6 @@ import {
   httpBatchLink,
   TRPCClientError,
 } from "@trpc/client";
-import superjson from "superjson";
 import { AppRouter } from "@/server";
 
 export function isTRPCClientError(
@@ -17,7 +16,6 @@ export function isTRPCClientError(
 }
 
 const trpc = createTRPCProxyClient<AppRouter>({
-  transformer:superjson,
   links: [
     httpBatchLink({
       url: "http://localhost:3000/api/trpc",
@@ -46,18 +44,26 @@ const Links: { name: string }[] = [
 ];
 
 type Food = {
-  data: {
-    id: number;
-    title: string;
-    add_ons: string | null;
-    price: number;
-    category: string;
-  }[];
-};
+  id: number;
+  title: string;
+  add_ons: string | null;
+  price: number;
+  category: string;
+}[];
 
-const MenuCard = ({ data }: Food) => {
+const initialData: Food = [
+  {
+    id: 1,
+    title: "",
+    add_ons: null,
+    price: 0,
+    category: "",
+  },
+];
+
+const MenuCard = () => {
   const [divName, setDivName] = useState("AllMeals");
-  const [meals, setMeals] = useState(data);
+  const [meals, setMeals] = useState(initialData);
 
   async function handleData(name: string) {
     try {
