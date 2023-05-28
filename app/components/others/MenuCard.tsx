@@ -109,7 +109,7 @@ const MenuCard = () => {
           {divName}
         </p>
       </section>
-      <section className="grid h-200 w-screen grid-cols-3 gap-1 overflow-y-scroll p-1 sm:grid-cols-4 lg:grid-cols-6">
+      <section className="grid h-100 w-screen grid-cols-3 gap-1 overflow-y-scroll p-1 sm:grid-cols-4 lg:grid-cols-6">
         {meals &&
           meals.map((item) => (
             <div className="grid h-56 p-2 rounded w-full bg-black/50" key={item.id}>

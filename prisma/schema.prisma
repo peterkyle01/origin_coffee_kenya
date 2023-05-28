@@ -10,7 +10,7 @@ datasource db {
 model Meal {
   id       Int     @id @default(autoincrement())
   title    String  @db.VarChar(255)
-  add_ons  String?
+  add_ons  String @default("ONLY")
   price    Float
   category String
 }
