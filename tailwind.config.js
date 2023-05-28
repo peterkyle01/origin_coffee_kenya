@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       spacing: {
         100: "35rem",
+        200:"45rem"
       },
       padding: {
         full: "100%",
