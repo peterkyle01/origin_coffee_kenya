@@ -1,6 +1,5 @@
 "use client";
-import Logo from "@/public/logo.png";
-import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import {
   createTRPCProxyClient,
@@ -113,18 +112,10 @@ const MenuCard = () => {
       <section className="grid h-200 w-screen grid-cols-3 gap-1 overflow-y-scroll p-1 sm:grid-cols-4 lg:grid-cols-6">
         {meals &&
           meals.map((item) => (
-            <div className="grid h-64 w-full bg-black/50" key={item.id}>
-              <div className="relative h-44 bg-white">
-                <Image
-                  src={Logo}
-                  fill
-                  priority
-                  alt="Logo Image"
-                  sizes="max-width:2500px,max-height:1800"
-                />
-              </div>
-              <p className="text-lg font-extrabold uppercase">{item.title}</p>
-              <p className="text-center text-sm uppercase text-gray-400">
+            <div className="grid h-56 p-2 rounded w-full bg-black/50" key={item.id}>
+              
+              <p className="font-extrabold uppercase">{item.title}</p>
+              <p className="text-center text-xs uppercase text-gray-400">
                 {item.add_ons}
               </p>
               <hr className="w-3/4 place-self-center" />
