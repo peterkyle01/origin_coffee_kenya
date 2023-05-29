@@ -7,7 +7,7 @@ export default function Menu() {
   return (
     <>
       <header className="relative flex h-80 w-screen items-center justify-center">
-        <div className="absolute z-10 h-full w-full bg-black/40"></div>
+        <div className="absolute z-10 h-full w-full bg-black/50"></div>
         <Image
           src={imageTen}
           fill
