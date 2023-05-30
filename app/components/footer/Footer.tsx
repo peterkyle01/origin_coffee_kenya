@@ -7,10 +7,10 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-screen h-auto bg-black/90">
-      <div className="w-full h-auto sm:inline-flex">
-        <div className="w-full h-auto sm:h-80">
-          <p className="text-orange-300 font-semibold text-2xl py-8">
+    <footer className="h-auto w-screen bg-black/90">
+      <div className="h-auto w-full sm:inline-flex">
+        <div className="h-auto w-full sm:h-80">
+          <p className="py-8 text-2xl font-semibold text-orange-300">
             ORIGIN COFFEE KENYA
           </p>
           <p className="py-1 font-thin">
@@ -19,34 +19,70 @@ export default function Footer() {
           <p className="py-1 font-thin">Eldoret & Nakuru,Kenya</p>
           <p className="py-1 font-thin">Africa</p>
         </div>
-        <div className="w-full h-auto sm:h-80 grid py-8">
-          <p className="py-2 font-thin">Phone:0795100000</p>
-          <p className="py-2 font-thin">Email:info@origincoffee.co.ke</p>
+        <div className="grid h-auto w-full py-8 sm:h-80">
+          <p className="py-2 font-thin">
+            Phone:
+            <Link href={"tel:0795100000"} className="text-orange-300">
+              0795100000
+            </Link>
+          </p>
+          <p className="py-2 font-thin">
+            Email:
+            <Link
+              href={"mailto:info@origincoffee.co.ke"}
+              className="text-orange-300"
+            >
+              info@origincoffee.co.ke
+            </Link>
+          </p>
           <p className="py-2 font-thin">Mon-Sat:from 9:00 am</p>
           <p className="py-2 font-thin">Sun:from 12 pm to 4 pm</p>
         </div>
-        <div className="w-full h-auto sm:h-80 py-8">
+        <div className="h-auto w-full py-8 sm:h-80">
           <p className="py-2 font-semibold">LATEST JOBS</p>
           <p className="py-2 font-thin">
             Looking for a great,fun workplace?Join the Origin Coffee Kenya by
             sharing your resume of the position interested to:
-            <Link href={"mailto:cv@origincoffee.co.ke"} className="text-orange-300">
+            <Link
+              href={"mailto:cv@origincoffee.co.ke"}
+              className="text-orange-300"
+            >
               cv@origincoffee.co.ke
+            </Link>
+          </p>
+          <p className="py-2 font-thin">
+            This Website was developed by Peterkyle:
+            <Link href={"tel:0758685974"} className="text-orange-300">
+              0758685974
             </Link>
           </p>
         </div>
       </div>
-      <div className="w-full h-24">
+      <div className="h-24 w-full">
         <span className="m-2 flex">
-          <i className="text-3xl text-white m-2">
+          <Link
+            href={"https://web.facebook.com/OrigincoffeeKenya/"}
+            target="_blank"
+            className="m-2 text-3xl text-white"
+          >
             <FaFacebookSquare />
-          </i>
-          <i className="text-3xl text-white m-2">
+          </Link>
+          <Link
+            href={
+              "https://www.instagram.com/origincoffeeke/?igshid=19tngv6dk7437"
+            }
+            target="_blank"
+            className="m-2 text-3xl text-white"
+          >
             <FaInstagramSquare />
-          </i>
-          <i className="text-3xl text-white m-2">
+          </Link>
+          <Link
+            href={"https://twitter.com/kenya_origin"}
+            target="_blank"
+            className="m-2 text-3xl text-white"
+          >
             <FaTwitterSquare />
-          </i>
+          </Link>
         </span>
         <p className="my-2 font-semibold tracking-wider">
           @ 2023 Origin Coffee Kenya , All rights reserved
