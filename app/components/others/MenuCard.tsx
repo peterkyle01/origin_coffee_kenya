@@ -17,7 +17,7 @@ export function isTRPCClientError(
 const trpc = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: "https://origin-coffee-kenya.vercel.app/api/trpc",
+      url: "http://localhost:3000/api/trpc",
     }),
   ],
 });
@@ -66,7 +66,7 @@ const MenuCard = () => {
         }
       }
     }
-    getData()
+    getData();
   }, []);
 
   async function handleData(name: string) {
@@ -112,8 +112,10 @@ const MenuCard = () => {
       <section className="grid h-100 w-screen grid-cols-3 gap-1 overflow-y-scroll p-1 sm:grid-cols-4 lg:grid-cols-6">
         {meals &&
           meals.map((item) => (
-            <div className="grid h-56 p-2 rounded w-full bg-black/50" key={item.id}>
-              
+            <div
+              className="grid h-56 w-full rounded bg-black/50 p-2"
+              key={item.id}
+            >
               <p className="font-extrabold uppercase">{item.title}</p>
               <p className="text-center text-xs uppercase text-gray-400">
                 {item.add_ons}

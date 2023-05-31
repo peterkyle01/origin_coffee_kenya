@@ -1,5 +1,7 @@
 import Image from "next/image";
-import imageTen from "../../public/img_ten.jpg";
+import image1 from "../../public/Image1.webp";
+import image3 from "../../public/Image3.webp";
+import image4 from "../../public/Image4.webp";
 import { IoTrophyOutline, IoFastFoodOutline } from "react-icons/io5";
 import { GiSandsOfTime } from "react-icons/gi";
 
@@ -9,7 +11,7 @@ export default function page() {
       <header className="relative flex h-80 w-screen items-center justify-center">
         <div className="absolute z-10 h-full w-full bg-black/40"></div>
         <Image
-          src={imageTen}
+          src={image1}
           fill
           priority
           alt="Food Image"
@@ -94,10 +96,10 @@ export default function page() {
             </p>
           </div>
         </section>
-        <section className="grid h-80 w-screen grid-cols-2 p-4 lg:h-100">
+        <section className="grid h-80 w-screen grid-cols-2 gap-2 p-4 lg:h-100">
           <div className="relative">
             <Image
-              src={imageTen}
+              src={image3}
               fill
               priority
               alt="Food Image"
@@ -106,7 +108,7 @@ export default function page() {
           </div>
           <div className="relative">
             <Image
-              src={imageTen}
+              src={image4}
               fill
               priority
               alt="Food Image"
@@ -114,44 +116,47 @@ export default function page() {
             />
           </div>
         </section>
-        <section className="flex h-100 w-full flex-col p-2 sm:flex-row sm:h-80">
+        <section className="flex h-100 w-full flex-col p-2 sm:h-80 sm:flex-row">
           <div className="flex h-full w-full items-center sm:flex-col">
             <h1 className="p-2 ">O</h1>
             <h2 className="p-1 ">Openness</h2>
-            <p className="text-xs p-2">Honesty accountability transparency</p>
+            <p className="p-2 text-xs">Honesty accountability transparency</p>
           </div>
-          <div className="flex h-full items-center w-full sm:flex-col">
+          <div className="flex h-full w-full items-center sm:flex-col">
             <h1 className="p-2">R</h1>
             <h2 className="p-1">Reliable</h2>
-            <p className="text-xs p-2"> Trustworthy,We deliver what we promise</p>
+            <p className="p-2 text-xs">
+              {" "}
+              Trustworthy,We deliver what we promise
+            </p>
           </div>
-          <div className="flex h-full items-center w-full sm:flex-col">
+          <div className="flex h-full w-full items-center sm:flex-col">
             <h1 className="p-2">I</h1>
             <h2 className="p-1">Ingenuity</h2>
-            <p className="text-xs p-2">
+            <p className="p-2 text-xs">
               The power of creative imagination-We purpose to continuously
               improve quality of our products and services
             </p>
           </div>
-          <div className="flex h-full items-center w-full sm:flex-col">
+          <div className="flex h-full w-full items-center sm:flex-col">
             <h1 className="p-2">G</h1>
             <h2 className="p-1">Great</h2>
-            <p className="text-xs p-2">
+            <p className="p-2 text-xs">
               We aspire to exceed expectations everyday to create out of this
               world moments
             </p>
           </div>
-          <div className="flex h-full items-center w-full sm:flex-col">
+          <div className="flex h-full w-full items-center sm:flex-col">
             <h1 className="p-2">I</h1>
             <h2 className="p-1">Inspire</h2>
-            <p className="text-xs p-2">
+            <p className="p-2 text-xs">
               Be the best you can be.Leave it better than you found it.
             </p>
           </div>
-          <div className="flex h-full items-center w-full sm:flex-col">
+          <div className="flex h-full w-full items-center sm:flex-col">
             <h1 className="p-2">N</h1>
             <h2 className="p-1">Nurturing</h2>
-            <p className="text-xs p-2">
+            <p className="p-2 text-xs">
               We believe in taking care of others;our guests,staff,suppliers and
               partners.
             </p>

@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-import imageTen from "../../public/img_ten.jpg"
+import image1 from "../../public/Image1.webp";
 export default function page() {
   return (
     <>
-      <header className="w-screen h-80 relative flex justify-center items-center">
-        <div className="bg-black/40 w-full h-full absolute z-10"></div>
+      <header className="relative flex h-80 w-screen items-center justify-center">
+        <div className="absolute z-10 h-full w-full bg-black/40"></div>
         <Image
-          src={imageTen}
+          src={image1}
           fill
           priority
           alt="Food Image"
@@ -15,7 +15,7 @@ export default function page() {
         />
         <h2 className="z-20">KITCHEN AND TEAM</h2>
       </header>
-      <main className="w-screen h-100  bg-black/95"></main>
+      <main className="h-100 w-screen  bg-black/95"></main>
     </>
   );
 }

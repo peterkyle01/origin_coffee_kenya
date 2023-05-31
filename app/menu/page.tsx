@@ -1,15 +1,14 @@
 import Image from "next/image";
-import imageTen from "../../public/img_ten.jpg";
+import image1 from "../../public/Image1.webp";
 import MenuCard from "../components/others/MenuCard";
 
 export default function Menu() {
-
   return (
     <>
       <header className="relative flex h-80 w-screen items-center justify-center">
         <div className="absolute z-10 h-full w-full bg-black/50"></div>
         <Image
-          src={imageTen}
+          src={image1}
           fill
           priority
           alt="Food Image"

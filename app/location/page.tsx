@@ -1,5 +1,6 @@
 import Image from "next/image";
-import imageTen from "../../public/img_ten.jpg";
+import image1 from "../../public/Image1.webp";
+import image2 from "../../public/Image2.webp";
 import { DatePicker } from "../components/buttons/DatePicker";
 import { TimeSelect } from "../components/buttons/TimeSelect";
 import { PeopleSelect } from "../components/buttons/PeopleSelect";
@@ -11,7 +12,7 @@ export default function page() {
       <header className="relative flex h-80 w-screen items-center justify-center">
         <div className="absolute z-10 h-full w-full bg-black/40"></div>
         <Image
-          src={imageTen}
+          src={image1}
           fill
           priority
           alt="Food Image"
@@ -19,8 +20,8 @@ export default function page() {
         />
         <h2 className="z-20">LOCATION</h2>
       </header>
-      <main className="h-auto w-screen bg-black/95 p-1 ">
-        <section className="flex h-auto w-screen flex-col sm:flex-row">
+      <main className="grid h-auto w-screen gap-2 bg-black/95 p-1">
+        <section className="flex h-auto w-screen flex-col gap-2 sm:flex-row">
           <div className="h-80 w-full">
             <h3 className="m-1">Make A Reservation</h3>
             <div className="grid h-3/4 w-full place-items-center">
@@ -42,10 +43,10 @@ export default function page() {
             ></iframe>
           </div>
         </section>
-        <section className="flex h-auto w-screen flex-col sm:flex-row-reverse">
+        <section className="flex h-auto w-screen flex-col gap-2 sm:flex-row-reverse">
           <div className="relative h-80 w-full">
             <Image
-              src={imageTen}
+              src={image2}
               fill
               priority
               alt="Food Image"

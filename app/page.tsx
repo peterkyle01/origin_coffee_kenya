@@ -1,14 +1,15 @@
 import Image from "next/image";
-import imageTwo from "../public/img_two.jpg"
-import imageFour from "../public/img_four.jpg";
-import imageFive from "../public/img_five.jpg";
-import imageSix from "../public/img_six.jpg";
-import imageEight from "../public/img_eight.jpg";
-import imageNine from "../public/img_nine.jpg";
-import imageEleven from "../public/img_eleven.jpg";
+import image1 from "../public/Image1.webp";
+import image3 from "../public/Image3.webp";
+import image4 from "../public/Image4.webp";
+import image5 from "../public/Image5.webp";
+import image6 from "../public/Image6.webp";
+import image7 from "../public/Image7.webp";
+import image8 from "../public/Image8.webp";
+import image9 from "../public/Image9.webp";
+import image10 from "../public/Image10.webp";
 import NormalBtn from "./components/buttons/NormalBtn";
 import { AiOutlineArrowRight } from "react-icons/ai";
-
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <header className="relative flex h-100 w-screen items-center justify-center ">
         <div className="absolute z-10 h-full w-full bg-black/20"></div>
         <Image
-          src={imageTwo}
+          src={image1}
           fill
           priority
           alt="Food Image"
@@ -52,7 +53,7 @@ export default function Home() {
           <div className="h-96 w-full p-4 sm:p-8">
             <div className="relative h-full w-full">
               <Image
-                src={imageEight}
+                src={image3}
                 fill
                 priority
                 alt="Food Image"
@@ -76,7 +77,7 @@ export default function Home() {
           <div className="relative grid h-96 w-full grid-cols-2 items-center gap-4 p-8">
             <div className="relative h-36 w-36 place-self-center lg:h-40 lg:w-40 lg:place-self-end">
               <Image
-                src={imageFour}
+                src={image5}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
@@ -84,7 +85,7 @@ export default function Home() {
             </div>
             <div className="relative h-36 w-36 place-self-center lg:h-40 lg:w-40 lg:place-self-start">
               <Image
-                src={imageEleven}
+                src={image8}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
@@ -92,7 +93,7 @@ export default function Home() {
             </div>
             <div className="relative h-36 w-36 place-self-center lg:h-40 lg:w-40 lg:place-self-end">
               <Image
-                src={imageEight}
+                src={image9}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
@@ -100,7 +101,7 @@ export default function Home() {
             </div>
             <div className="relative h-36 w-36 place-self-center lg:h-40 lg:w-40 lg:place-self-start">
               <Image
-                src={imageNine}
+                src={image10}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
@@ -122,7 +123,7 @@ export default function Home() {
           <div className="relative grid h-96 w-full grid-cols-2 items-center gap-4 p-8">
             <div className="relative h-full w-full place-self-center lg:h-full  lg:place-self-end">
               <Image
-                src={imageFive}
+                src={image6}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
@@ -130,7 +131,7 @@ export default function Home() {
             </div>
             <div className="relative h-full w-full place-self-center lg:h-full  lg:place-self-start">
               <Image
-                src={imageSix}
+                src={image7}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
@@ -152,7 +153,7 @@ export default function Home() {
           <div className="h-96 w-full p-8">
             <div className="relative h-full w-full">
               <Image
-                src={imageNine}
+                src={image4}
                 fill
                 alt="Food Image"
                 sizes="max-width:2500px,max-height:1800"
