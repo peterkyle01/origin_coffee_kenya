@@ -47,6 +47,9 @@ const Links: { name: string }[] = [
     name: "KiddieMenu",
   },
   {
+    name: "Cocktails",
+  },
+  {
     name: "Drinks",
   },
 ];
