@@ -86,8 +86,6 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-snap-type: y proximity;
-  scroll-padding-top:3rem;
 }
 
 h1 {

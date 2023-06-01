@@ -90,7 +90,7 @@ const MenuCard = () => {
 
   return (
     <>
-      <section className="scroll_section grid h-32 w-screen">
+      <section className="grid h-32 w-screen">
         <div className="flex items-center overflow-x-scroll md:justify-evenly md:overflow-x-hidden">
           {Links.map((link) => (
             <button
