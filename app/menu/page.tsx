@@ -3,7 +3,8 @@ import MenuCard from "../components/others/MenuCard";
 export default function Menu() {
   return (
     <>
-      <main className="h-auto w-screen bg-black/95 pt-12">
+      <div className=" h-12 w-screen bg-black"></div>
+      <main className="h-auto w-screen bg-black/95">
         <MenuCard />
         <section className="flex h-100 w-full flex-col p-2 sm:h-80 sm:flex-row">
           <div className="flex h-full w-full items-center sm:flex-col">
