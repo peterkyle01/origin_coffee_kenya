@@ -28,7 +28,7 @@ export default function Home() {
           <h2 className="text-center">ORIGIN COFFEE KENYA</h2>
           <hr className="h-0.5 w-1/2 place-self-center bg-white" />
           <h3 className=" text-center">KENYAN FOOD AND WINE</h3>
-          <NormalBtn name="Order" href="#" />
+          <NormalBtn name="Order" href="tel:0795100000" />
         </div>
         <p className="absolute -left-2 bottom-10 z-20 flex rotate-90 items-center text-sm">
           SCROLL
