@@ -38,6 +38,15 @@ const Links: { name: string }[] = [
     name: "SodaAndWater",
   },
   {
+    name: "JuicesAndDesert",
+  },
+  {
+    name: "SoupAndSalads",
+  },
+  {
+    name: "KiddieMenu",
+  },
+  {
     name: "Drinks",
   },
 ];
