@@ -50,7 +50,13 @@ const Links: { name: string }[] = [
     name: "Cocktails",
   },
   {
-    name: "Drinks",
+    name: "PitchersAndShakes",
+  },
+  {
+    name: "BeerAndShooters",
+  },
+  {
+    name: "WinesAndChampagne",
   },
 ];
 
