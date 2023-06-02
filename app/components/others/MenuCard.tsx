@@ -58,6 +58,12 @@ const Links: { name: string }[] = [
   {
     name: "WinesAndChampagne",
   },
+  {
+    name: "WhiskeyAndGin",
+  },
+  {
+    name:"OtherDrinks"
+  }
 ];
 
 type Food = {
