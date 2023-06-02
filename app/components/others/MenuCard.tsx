@@ -6,9 +6,10 @@ import {
   httpBatchLink,
   TRPCClientError,
 } from "@trpc/client";
+import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
 import { AppRouter } from "@/server";
 
-export function isTRPCClientError(
+function isTRPCClientError(
   cause: unknown
 ): cause is TRPCClientError<AppRouter> {
   return cause instanceof TRPCClientError;
@@ -17,7 +18,7 @@ export function isTRPCClientError(
 const trpc = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: "https://origin-coffee-kenya.vercel.app/api/trpc",
+      url: "http://localhost:3000/api/trpc",
     }),
   ],
 });
@@ -62,8 +63,8 @@ const Links: { name: string }[] = [
     name: "WhiskeyAndGin",
   },
   {
-    name:"OtherDrinks"
-  }
+    name: "OtherDrinks",
+  },
 ];
 
 type Food = {
@@ -114,8 +115,16 @@ const MenuCard = () => {
 
   return (
     <>
-      <section className="grid h-32 w-screen">
-        <div className="flex items-center overflow-x-scroll md:justify-evenly md:overflow-x-hidden">
+      <section className="grid h-32 w-screen relative">
+        <div className="absolute z-30 flex h-0 top-4 w-full items-start justify-between bg-red-300/50 text-orange-300">
+          <i>
+            <BiCaretLeft size={30} />
+          </i>
+          <i>
+            <BiCaretRight size={30} />
+          </i>
+        </div>
+        <div className=" flex items-center overflow-x-scroll px-4">
           {Links.map((link) => (
             <button
               key={link.name}
