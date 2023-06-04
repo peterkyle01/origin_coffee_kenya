@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#PWA
+sw.js
+workbox-*.js
+
+#sitemap
+robots.txt
+sitemap-*.xml
+sitemap.xml
