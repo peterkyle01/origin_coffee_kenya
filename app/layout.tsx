@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
         className={`${roboto.className} ${herr_von_muellerhoff.variable} ${source_sans_pro.variable}`}
