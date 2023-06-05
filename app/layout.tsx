@@ -1,6 +1,7 @@
 import ScrollToTopButton from "./components/buttons/ScrollToTopBtn";
 import Footer from "./components/footer/Footer";
 import NavbarWrapper from "./components/navbar/NavbarWrapper";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import {
   Herr_Von_Muellerhoff,
@@ -56,6 +57,7 @@ export default function RootLayout({
         <ScrollToTopButton />
         {children}
         <Footer />
+        <Analytics/>
       </body>
     </html>
   );
