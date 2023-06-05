@@ -49,6 +49,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#fdba74" />
       </head>
       <body
         className={`${roboto.className} ${herr_von_muellerhoff.variable} ${source_sans_pro.variable}`}
@@ -57,7 +58,7 @@ export default function RootLayout({
         <ScrollToTopButton />
         {children}
         <Footer />
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );

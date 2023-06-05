@@ -22,13 +22,18 @@ export default function Footer() {
         <div className="grid h-auto w-full py-8 sm:h-80">
           <p className="py-2 font-thin">
             Phone:
-            <Link href={"tel:0795100000"} className="text-orange-300">
+            <Link
+              aria-label="Origin Coffee Kenya Phone Number"
+              href={"tel:0795100000"}
+              className="text-orange-300"
+            >
               0795100000
             </Link>
           </p>
           <p className="py-2 font-thin">
             Email:
             <Link
+              aria-label="Info Email"
               href={"mailto:info@origincoffee.co.ke"}
               className="text-orange-300"
             >
@@ -44,6 +49,7 @@ export default function Footer() {
             Looking for a great,fun workplace?Join the Origin Coffee Kenya by
             sharing your resume of the position interested to:
             <Link
+              aria-label="CV Email"
               href={"mailto:cv@origincoffee.co.ke"}
               className="text-orange-300"
             >
@@ -52,7 +58,11 @@ export default function Footer() {
           </p>
           <p className="py-2 font-thin">
             This Website was developed by Peterkyle:
-            <Link href={"tel:0758685974"} className="text-orange-300">
+            <Link
+              aria-label="Developer contact"
+              href={"tel:0758685974"}
+              className="text-orange-300"
+            >
               0758685974
             </Link>
           </p>
@@ -61,6 +71,7 @@ export default function Footer() {
       <div className="h-24 w-full">
         <span className="m-2 flex">
           <Link
+            aria-label="Facebook"
             href={"https://web.facebook.com/OrigincoffeeKenya/"}
             target="_blank"
             className="m-2 text-3xl text-white"
@@ -68,6 +79,7 @@ export default function Footer() {
             <FaFacebookSquare />
           </Link>
           <Link
+            aria-label="Instagram"
             href={
               "https://www.instagram.com/origincoffeeke/?igshid=19tngv6dk7437"
             }
@@ -77,6 +89,7 @@ export default function Footer() {
             <FaInstagramSquare />
           </Link>
           <Link
+            aria-label="Twitter"
             href={"https://twitter.com/kenya_origin"}
             target="_blank"
             className="m-2 text-3xl text-white"
