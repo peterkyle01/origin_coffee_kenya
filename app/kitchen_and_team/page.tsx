@@ -15,7 +15,7 @@ export default function page() {
         />
         <h2 className="z-20">KITCHEN AND TEAM</h2>
       </header>
-      <main className="h-100 w-screen  bg-black/95 p-8">
+      <main className="h-auto w-screen  bg-black/95 p-8 md:h-80">
         <h1 className="my-1">Chef and Team</h1>
         <p>
           The chef and team of Origin Coffee Kenya are passionate about creating
