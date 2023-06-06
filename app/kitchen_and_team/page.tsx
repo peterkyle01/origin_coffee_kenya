@@ -15,7 +15,21 @@ export default function page() {
         />
         <h2 className="z-20">KITCHEN AND TEAM</h2>
       </header>
-      <main className="h-100 w-screen  bg-black/95"></main>
+      <main className="h-100 w-screen  bg-black/95">
+        <h1 className="my-1">Chef and Team</h1>
+        <p>
+          The chef and team of Origin Coffee Kenya are passionate about creating
+          fusion dishes that showcase the best of local and global cuisine. They
+          use fresh ingredients from local farmers and suppliers, and prepare
+          them with skill and creativity. The chef has over 10 years of
+          experience in the hospitality industry, and has trained with some of
+          the best chefs in the world. The team consists of talented and
+          friendly staff who are dedicated to providing excellent service and
+          memorable experiences to their guests. Origin Coffee Kenya is more
+          than just a coffee shop, it is a destination for food lovers who
+          appreciate quality and diversity.
+        </p>
+      </main>
     </>
   );
 }
